@@ -1,8 +1,10 @@
 {
   "products": [
     {
+      "id": 1,
       "name": "Woman Shawl",
       "price": 191,
+      "description": "Material\tPolyester Blend\nColour Name\tMulticolour\nDepartment\tWomen",
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680403397482-1.jpeg",
         "https://ecommerce.routemisr.com/Route-Academy-products/1680403397482-2.jpeg",
@@ -13,7 +15,9 @@
       "sizes": ["One Size"]
     },
     {
+      "id": 2,
       "name": "Woman Shawl",
+      "description": "Material\tPolyester Blend\nColour Name\tMulticolour\nDepartment\tWomen",
       "price": 149,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680403266805-1.jpeg",
@@ -25,8 +29,10 @@
       "sizes": ["One Size"]
     },
     {
+      "id": 3,
       "name": "Woman Shawl",
       "price": 149,
+      "description": "Material\tPolyester Blend\nColour Name\tMulticolour\nDepartment\tWomen",
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680403156555-3.jpeg",
         "https://ecommerce.routemisr.com/Route-Academy-products/1680403156555-2.jpeg",
@@ -37,7 +43,9 @@
       "sizes": ["One Size"]
     },
     {
+      "id": 4,
       "name": "Woman Shawl",
+      "description": "Material\tPolyester Blend\nColour Name\tMulticolour\nDepartment\tWomen",
       "price": 149,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680402838330-1.jpeg",
@@ -50,7 +58,9 @@
       "sizes": ["One Size"]
     },
     {
+      "id": 5,
       "name": "Woman Shawl",
+      "description": "Material\tPolyester Blend\nColour Name\tBeige\nDepartment\tWomen",
       "price": 349,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680402563676-2.jpeg",
@@ -63,7 +73,9 @@
       "sizes": ["One Size"]
     },
     {
+      "id": 6,
       "name": "Woman Bordeaux Long Sleeve Blouse BORDEAUX",
+      "description": "ShellFabric1 Cotton 65% Polyester 35%",
       "price": 499,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680402411883-2.jpeg",
@@ -74,7 +86,9 @@
       "sizes": ["XS", "S", "M", "L", "XL"]
     },
     {
+      "id": 7,
       "name": "Woman Brown Long Sleeve Tunic LT.CAMEL",
+      "description": "ShellFabric1 Cotton 65% Polyester 35%",
       "price": 499,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680402296306-3.jpeg",
@@ -85,7 +99,9 @@
       "sizes": ["XS", "S", "M", "L", "XL"]
     },
     {
+      "id": 8,
       "name": "Woman Standart Fit Knitted Cardigan",
+      "description": "Material\tPolyester Blend\nColour Name\tBeige\nDepartment\tWomen",
       "price": 499,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680401893496-2.jpeg",
@@ -97,7 +113,9 @@
       "sizes": ["XS", "S", "M", "L", "XL"]
     },
     {
+      "id": 9,
       "name": "Relaxed Fit Knitted Joggers Lilac",
+      "description": "Colour Name\tPink\nDepartment\tWomen\nMaterial Composition\tPolyester Blend",
       "price": 499,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680401672624-2.jpeg",
@@ -108,7 +126,9 @@
       "sizes": ["XS", "S", "M", "L", "XL"]
     },
     {
+      "id": 10,
       "name": "Woman Socks",
+      "description": "Colour Name\tPink\nDepartment\tWomen\nMaterial Composition\tPolyester Blend",
       "price": 199,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680401528923-1.jpeg",
@@ -118,7 +138,9 @@
       "sizes": ["One Size"]
     },
     {
+      "id": 11,
       "name": "Logo T-Shirt Green",
+      "description": "Soft and comfortable cotton fabric\nCrew neck and short sleeves\nComfortable, regular fit\nWash according to care label instructions",
       "price": 744,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680400287765-1.jpeg",
@@ -130,7 +152,9 @@
       "sizes": ["XS", "S", "M", "L", "XL"]
     },
     {
+      "id": 12,
       "name": "Orca Leather Boots Anthracite",
+      "description": "Genuine and smooth leather upper\nSecure lace-ups with side zipper closure\nSlightly cushioned footbed provides comfort\nPatterned chunky outsole provides traction and grip",
       "price": 4829,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680400120770-2.jpeg",
@@ -142,7 +166,9 @@
       "sizes": ["41", "42", "43", "44", "45"]
     },
     {
+      "id": 13,
       "name": "Softride Enzo NXT CASTLEROCK-High Risk R",
+      "description": "Sole Material\tRubber\nColour Name\tRED\nDepartment\tMen",
       "price": 2999,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680399913850-1.jpeg",
@@ -155,7 +181,9 @@
       "sizes": ["41", "42", "43", "44", "45"]
     },
     {
+      "id": 14,
       "name": "ESS Big Logo Hoodie TR Puma Black",
+      "description": "Material\tCombination\nColour Name\tblack\nDepartment\tMen",
       "price": 2649,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680399661306-2.jpeg",
@@ -167,7 +195,9 @@
       "sizes": ["XS", "S", "M", "L", "XL"]
     },
     {
+      "id": 15,
       "name": "Sportswear Club Graphic Hoodie Blue",
+      "description": "Soft and lightweight knitted fabric\nKangaroo pocket to front\nWash according to care label instructions\nNike signature branding detail",
       "price": 2449,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680396593909-2.jpeg",
@@ -179,7 +209,9 @@
       "sizes": ["XS", "S", "M", "L", "XL"]
     },
     {
+      "id": 16,
       "name": "NSW Everyday Essentials No-Show Socks (Pack of 3) White/Black",
+      "description": "Socks are highly comfort, stretchable and will manage moisture\nRibbed elasticated mouths that ensure snug fitting\nElasticated leg band which ensures easy wearability\nCarefully stitched to lend a neat finish\nThick terry sole provides comfort and impact absorption",
       "price": 1079,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680396038346-1.jpeg",
@@ -191,7 +223,9 @@
       "sizes": ["One Size"]
     },
     {
+      "id": 17,
       "name": "Court Tennis Track Pants Black",
+      "description": "Soft and sustainable polyester fabric\nElastic waist for comfortable fit\nMultiple pockets for quick storage\nWash according to care label instructions\nNike signature branding detail",
       "price": 3159,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680395860011-4.jpeg",
@@ -203,7 +237,9 @@
       "sizes": ["XS", "S", "M", "L", "XL"]
     },
     {
+      "id": 18,
       "name": "React Live Sneakers Black/White-Dk Smoke Grey",
+      "description": "Comfortable and soft cotton blend fabric\nRibbed crew neck and short sleeves\nadidas signature branding print\nWash according to care label instructions",
       "price": 4639,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680395632039-1.jpeg",
@@ -215,7 +251,9 @@
       "sizes": ["41", "42", "43", "44", "45"]
     },
     {
+      "id": 19,
       "name": "Essentials Embroidered Linear Logo T-Shirt Navy",
+      "description": "Comfortable and soft cotton blend fabric\nRibbed crew neck and short sleeves\nadidas signature branding print\nWash according to care label instructions",
       "price": 749,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680395220690-1.jpeg",
@@ -227,7 +265,9 @@
       "sizes": ["XS", "S", "M", "L", "XL"]
     },
     {
+      "id": 20,
       "name": "Salah Track Top",
+      "description": "Material\tCotton Blend\nColour Name\tnight indigo\nDepartment\tMen",
       "price": 1749,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680395033000-2.jpeg",
@@ -240,7 +280,9 @@
       "sizes": ["XS", "S", "M", "L", "XL"]
     },
     {
+      "id": 21,
       "name": "Woman Karma Socks Multicolour",
+      "description": "Soft and comfortable cotton fabric\nCrew neck and short sleeves\nComfortable, regular fit\nWash according to care label instructions",
       "price": 199,
       "images": [
         "https://ecommerce.routemisr.com/Route-Academy-products/1680401176767-2.jpeg",
