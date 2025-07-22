@@ -21,11 +21,9 @@ document.querySelector("form").addEventListener("submit", function (e) {
         if (email.value == emaillocal && password.value == passlocal) {
             open("home.html", "_self")
         } else {
-            console.log('incorrect inputs')
             showError()
         }
     } else {
-        console.log('not reading the local storage')
         showError();
     }
 })
