@@ -7,15 +7,13 @@
   --text-color:#333;
   --hover-color:#6C7AE0;
   --nav-bg-color:transparent;
-  
-  
-  
 }
 
 /* Default Light Mode */
 body {
   background-color:var(--bg-color);
   color:var(--text-color);
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -69,8 +67,6 @@ body.dark-mode .logo .logo-dark {
   margin: 0 auto;
   flex-wrap: wrap;
   font-size: 14px;
-  
-  
 }
 .scrolled {
   background-color:var(--bg-color);
@@ -149,23 +145,7 @@ transition: color 0.3s ease;
   display: block;
 }
 
-/* Sub-menu */
-.sub-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background:var(--bg-color);
-  display: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  min-width: 160px;
-  flex-direction: column;
-  list-style: none;
-}
 
-.sub-menu a {
-  padding: 15px 10px;
-  color: var(--text-color);
-}
 
 /* Icon header styling */
 .wrap-icon-header {
@@ -289,7 +269,7 @@ transition: color 0.3s ease;
   .limiter-menu-desktop {
     flex-wrap: nowrap; 
   }
-   .limiter-menu-desktop li a:hover{
+  .limiter-menu-desktop li a:hover{
   color:var(--bg-color) ;
 }
   .main-menu a {
