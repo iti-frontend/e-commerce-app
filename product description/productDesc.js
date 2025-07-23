@@ -12,9 +12,9 @@ var productId = params.get('id');
 // the varible we save our response so we deal with that varible as an object
 var myProduct;
 // default value for counter
-var count = 1;
+var counter = 1;
 // setting up the array that will be pushed to the local storage
-var cardList = [];
+var cardList;
 // making the request
 var req = new XMLHttpRequest()
 req.open("GET", '../products.json')
@@ -24,7 +24,6 @@ req.onreadystatechange = function () {
         var final = JSON.parse(req.responseText)
         var res = final.products.find(p => p.id == productId)
         if (res != null) {
-            console.log(res)
             myProduct = res
         } else {
             console.log('not found')
@@ -33,43 +32,73 @@ req.onreadystatechange = function () {
 }
 // here we set timeout waiting for the response is set to the varible we created
 setTimeout(function () {
-    // the object that pushes into the array and then saved at local storage after adding to card
-
     // setting the values for the page elements
     title.innerHTML = myProduct.name
     price.innerHTML = myProduct.price
-    total.innerHTML = count
     description.innerHTML = myProduct.description
+    total.innerHTML = counter
     // loop so we can access all images
     for (var i = 0; i < myProduct.images.length; i++) {
         album.innerHTML += `<img src=${myProduct.images[i]}>`
     }
     // the event to increase the count and update the total value
     increaseBtn.addEventListener('click', function () {
-        count++
-        total.innerHTML = count
+        counter++
+        total.innerHTML = counter
     })
     // the event to decrease the count and update the total value
     decreaseBtn.addEventListener('click', function () {
-        if (count <= 1) {
-            count = 1
+        if (counter <= 1) {
+            counter = 1
         } else {
-            count--
-            total.innerHTML = count
+            counter--
+            total.innerHTML = counter
         }
     })
+    // the object that pushes into the array and then saved at local storage after adding to card
     var product = {
         name: myProduct.name,
         id: myProduct.id,
         images: myProduct.images[1],
         price: myProduct.price,
-        count: count
+        count: counter
     }
-    window.localStorage.setItem('cartList', JSON.stringify(cardList))
+    // here we check if we had values at local storage we save it into array
+    if (localStorage.shoppingcart != null) {
+        cardList = JSON.parse(localStorage.shoppingcart)
+    } else {
+        // if not we start with empty array
+        cardList = [];
+    }
+    // setting the key to local storage
+    window.localStorage.setItem('shoppingcart', JSON.stringify(cardList))
+
     addToCart.addEventListener('click', function () {
-        product.count = count
-        cardList.push(product)
+        let currentCount = counter;
+        // checking if card list have values
+        if (cardList.length > 0 && cardList != []) {
+            // loop and validate to makr sure we update the index and pushing new object to the array
+            for (let i = 0; i < cardList.length; i++) {
+                if (cardList[i].id == product.id) {
+                    cardList[i].count = parseInt(cardList[i].count) + currentCount;
+                    localStorage.shoppingcart = JSON.stringify(cardList);
+                    console.log('updated count');
+                    return;
+                }
+            }
+        }
+        // If product not found in cardList, we add it then pushed to the array
+        let productToAdd = {
+            name: myProduct.name,
+            id: myProduct.id,
+            images: myProduct.images[1],
+            price: myProduct.price,
+            count: currentCount
+        };
+        cardList.push(productToAdd);
+        localStorage.shoppingcart = JSON.stringify(cardList);
+        console.log('new product pushed');
     })
 
-}, 50)
+}, 500)
 
