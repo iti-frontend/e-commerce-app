@@ -14,9 +14,9 @@ body {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
-.box {
-    margin: 0 auto;
-    margin-top: 120px;
+.boxx {
+    margin: 120px auto;
+    /* margin-top: 120px; */
     width: 80%;
     max-height: 900px;
     display: flex;

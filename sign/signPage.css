@@ -9,7 +9,7 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
-    background-color: #000;
+    background-color: #6C7AE0;
 }
 
 .container {
@@ -22,7 +22,7 @@ body {
     background-color: #ffffff;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 10px 5px 5px olive;
+    box-shadow: 10px 5px 5px #333;
 }
 
 .heading,
@@ -74,15 +74,17 @@ button {
     margin-bottom: 5px;
     text-align: center;
     border-radius: 10px;
-    background-color: #113F67;
+    background-color: #6366f1;
     color: #fff;
+    border: none;
 }
 
 button:hover {
-    background-color: #004080;
+    background-color: #6062ebc6;
     color: #fff;
     box-shadow: 0 0 10px rgba(0, 64, 128, 0.6);
     transition: all 0.3s ease;
+    border: none;
 }
 .error{
     color: red;

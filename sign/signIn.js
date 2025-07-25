@@ -19,7 +19,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
         var passlocal = window.localStorage.getItem("password")
         // comparing and validate the data with local storage
         if (email.value == emaillocal && password.value == passlocal) {
-            open("home.html", "_self")
+            open("../home.html", "_self")
         } else {
             showError()
         }
