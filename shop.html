@@ -1,211 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="shop.css">
 
-    <style>
-
-    *{
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Poppins-Regular;
-      font-size: 12px;
-      background-color: #f8f8f8;
-      color: #9a9999;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    section.products {
-      padding: 40px 0;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-
-    .product-card {
-      background-color: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .product-card:hover {
-      transform: scale(1.02);
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      transform: scale(1.1);
-    }
-
-    .product-card h3 {
-      font-size: 14px;
-      margin: 15px 0 5px;
-      padding: 0 10px;
-    }
-
-    .product-card p.price {
-      font-size: 12px;
-      color: #9a9999;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
-    .filter-navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 100px 150px 0px 150px;
-      max-width: 1000px;
-    }
-    .filter-links a {
-      margin-right: 1.5rem;
-      text-decoration: none;
-      color: #555;
-    }
-    .filter-links a.active {
-      text-decoration: underline;
-      color: black;
-    }
-    .controls {
-      display: flex;
-      gap: 0.5rem;
-    }
-    .controls button {
-      padding: 0.5rem 1rem;
-      border: 1px solid #ccc;
-      background: white;
-      cursor: pointer;
-    }
-    .filter-section {
-      display: none;
-      background: #f6f6f6;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #ccc;
-    }
-    .filter-group {
-      margin-bottom: 1rem;
-      margin-left:120px;
-
-    }
-    .filter-group p {
-      display: block;
-      margin: 0.3rem 0;
-    }
-    .product-image-div {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .product-image {
-      width: 100%;
-      display: block;
-    }
-    .quick-view {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translate(-50%, 50%);
-      background-color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 999px;
-      font-weight: bold;
-      opacity: 0;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      color: #585757;
-    }
-    .quick-view:hover{
-      background-color: #585757;
-      color: white;
-    }
-
-    .product-card:hover .quick-view {
-      opacity: 1;
-      transform: translate(-50%, 0);
-    }
-
-    #noFound{ 
-      display: none;
-      text-align: center;
-
-    }
-  </style>
 </head>
-<body>
- 
-  <section> <!-- filter bar (category only)-->
-    <div class="filter-navbar">
-    <div class="filter-links">
-      <a href="#" class="active" onclick="filter('all','all');closeFilter();">All Products</a>
-      <a href="#" onclick="filter('female','all');closeFilter();">Women</a>
-      <a href="#" onclick="filter('male','all');closeFilter();">Men</a>
-      <a href="#" onclick="filter('accessories','all');closeFilter();">Accessories</a>
-      <a href="#" onclick="filter('Shoes','all');closeFilter();">Shoes</a>
-    </div>
 
-    <div class="controls">
-      <button onclick="toggleFilters()">☰ Filter</button>
-      <button >🔍 Search</button>
+<body>
+  <!-- Nav Wrapper -->
+  <div class="wrap-menu-desktop scrolled">
+    <nav class="limiter-menu-desktop container">
+      <!-- Logo -->
+
+      <a href="/home.html" class="logo">
+        <img class="logo-dark" src="images/light-logo.png" alt="IMG-LOGO">
+        <img class="logo-light" src="images/logo.png" alt="IMG-LOGO">
+
+      </a>
+      <!-- Icons -->
+      <div class="wrap-icon-header">
+        <div class="icon-header-item js-show-modal-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="icon-header-item icon-header-noti js-show-cart" data-notify="2">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <a href="#" class="icon-header-item icon-header-noti" data-notify="0">
+          <i class="fa-regular fa-heart"></i>
+        </a>
+      </div>
+      <!-- Toggle Button -->
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span class="icon">&#9776;</span>
+      </button>
+      <!-- Menu -->
+      <div class="menu-desktop">
+        <ul class="main-menu">
+          <li class="active-menu">
+            <a href="/home.html">Home</a>
+          </li>
+          <li><a href="/shop.html">Shop</a></li>
+          <li><a href="#down">Features</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="/about/about.html">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+  </div>
+
+
+  </div>
+  <!-- Modal -->
+  <div class="modal-search" id="searchModal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeModal">&times;</span>
+      <input type="text" placeholder="Search..." class="search-input" id="searchInput" />
+      <button class="search-button" id="searchButton">Search</button>
     </div>
   </div>
+
+
+  <!-- Toggle Mode -->
+  <button id="toggleMode"><i class="fa-solid fa-circle-half-stroke"></i></button>
+
+  <section> <!-- filter bar (category only)-->
+    <div class="filter-navbar">
+      <div class="filter-links">
+        <a href="#" class="active" onclick="filter('all','all');closeFilter();">All Products</a>
+        <a href="#" onclick="filter('female','all');closeFilter();">Women</a>
+        <a href="#" onclick="filter('male','all');closeFilter();">Men</a>
+        <a href="#" onclick="filter('accessories','all');closeFilter();">Accessories</a>
+        <a href="#" onclick="filter('Shoes','all');closeFilter();">Shoes</a>
+      </div>
+
+      <div class="controls">
+        <button onclick="toggleFilters()">☰ Filter</button>
+        <button class="js-show-modal-search">🔍 Search</button>
+]      </div>
+    </div>
   </section>
 
 
 
   <!--filter button categories-->
   <section>
-  <div class="filter-section" id="filterSection"> 
-    <div class="filter-group">
-      <strong>Category</strong><br/>
-      <p><input type="radio" name="category" value="men" onclick="setCategory('male')"> Men</p>
-      <p><input type="radio" name="category" value="women" onclick="setCategory('female')"> Women</p>
-      <p><input type="radio" name="category" value="accessories" onclick="setCategory('accessories')"> Accessories</p>
-      <p><input type="radio" name="category" value="shoes" onclick="setCategory('Shoes')"> Shoes</p>
-    </div>
+    <div class="filter-section" id="filterSection">
+      <div class="filter-group">
+        <strong>Category</strong><br />
+        <p><input type="radio" name="category" value="men" onclick="setCategory('male')"> Men</p>
+        <p><input type="radio" name="category" value="women" onclick="setCategory('female')"> Women</p>
+        <p><input type="radio" name="category" value="accessories" onclick="setCategory('accessories')"> Accessories</p>
+        <p><input type="radio" name="category" value="shoes" onclick="setCategory('Shoes')"> Shoes</p>
+      </div>
 
-    <div class="filter-group">
-      <strong>Price</strong><br/>
-      <p><input type="radio" name="price" value="all" checked onclick="setPrice('all')"> All</p>
-      <p><input type="radio" name="price" value="0-100" onclick="setPrice('100-1000')"> $100 - $1000</p>
-      <p><input type="radio" name="price" value="100-200" onclick="setPrice('1000-2000')"> $1000 - $2000</p>
-      <p><input type="radio" name="price" value="200+" onclick="setPrice('2000+')"> $2000+</p>
+      <div class="filter-group">
+        <strong>Price</strong><br />
+        <p><input type="radio" name="price" value="all" checked onclick="setPrice('all')"> All</p>
+        <p><input type="radio" name="price" value="0-100" onclick="setPrice('100-1000')"> $100 - $1000</p>
+        <p><input type="radio" name="price" value="100-200" onclick="setPrice('1000-2000')"> $1000 - $2000</p>
+        <p><input type="radio" name="price" value="200+" onclick="setPrice('2000+')"> $2000+</p>
+      </div>
     </div>
-  </div>
 
   </section>
 
   <!--all products-->
-<section class="products">
+  <section class="products">
     <div class="container" id="container">
       <div id="product-grid" class="product-grid"></div>
-      </div>
     </div>
-    <div id="noFound"> <h2> No Products Found </h2> </div>
+    </div>
+    <div id="noFound">
+      <h2> No Products Found </h2>
+    </div>
   </section>
-
-
-    <script src="products.js"></script>
-
+  <div id="footer"></div>
+  <script>
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+  <script src="products.js"></script>
+  <script src="nav.js"></script>
 </body>
+
 </html>

@@ -110,5 +110,5 @@ setTimeout(function () {
         console.log('new product pushed');
     })
 
-}, 50)
+}, 500)
 

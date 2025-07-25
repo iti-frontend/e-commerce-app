@@ -54,18 +54,18 @@ function setPrice(price) {
 
 // filters products by category and/or price   ---- START ----
 function filter(category, price) {
-  
-  const storedProducts = JSON.parse(localStorage.getItem("products"));  
+
+  const storedProducts = JSON.parse(localStorage.getItem("products"));
   const filteredProducts = [];
 
   for (let i = 0; i < storedProducts.length; i++) {
     const product = storedProducts[i];
 
-    var matchedCategory=true;
-    if(category === "all" || product.category.toLowerCase() === category.toLowerCase()){
+    var matchedCategory = true;
+    if (category === "all" || product.category.toLowerCase() === category.toLowerCase()) {
       matchedCategory = true;
     }
-    else matchedCategory=false;
+    else matchedCategory = false;
     let matchedPrice = true;
 
     if (price === "100-1000") {
@@ -102,7 +102,7 @@ function filter(category, price) {
 function showProducts(filteredProducts) {
   const grid = document.getElementById("product-grid");
   grid.innerHTML = '';
-var noFound = document.getElementById("noFound");
+  var noFound = document.getElementById("noFound");
   if (filteredProducts.length === 0) {
     noFound.style.display = "block";
   }
@@ -126,17 +126,75 @@ function cardStyle(product, card) {
   card.innerHTML = ` 
             <div class="product-image-div">
             <img src="${product.images[0]}" class="product-image" alt="${product.name}">
-            <button class="quick-view">Quick View</button>
+            <button onclick="openProduct(${product.id})" class="quick-view">Quick View</button>
             </div>
             <h3>${product.name}</h3>
             <p class="price">$${product.price}</p>
           `;
-} 
+
+}
+function openProduct(id) {
+  // console.log('hhhhh')
+  // console.log(product)
+  open(`./product description/productDesc.html?id=${id}`)
+}
 // ---- END -----
 
 // Close filter section --- START ---
-function closeFilter(){
+function closeFilter() {
   const filterSection = document.getElementById('filterSection');
   filterSection.style.display = 'none';
 }
 // ---- END -----
+
+// Get elements
+const modal = document.getElementById('searchModal');
+const openBtn = document.querySelectorAll('.js-show-modal-search');
+const closeBtn = document.getElementById('closeModal');
+
+
+for (let i = 0; i < openBtn.length; i++) {
+  openBtn[i].addEventListener('click', () => {
+    modal.style.display = 'block';
+    console.log("Modal opened");
+  });
+}
+
+// Close modal
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Close when clicking outside modal content
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+// const listItems = document.querySelectorAll('h3'); // or your actual elements
+
+
+
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.trim().toLowerCase();
+
+  const storedProducts = JSON.parse(localStorage.getItem("products"));
+
+  const filtered = storedProducts.filter(product =>
+    product.name.toLowerCase().includes(query)
+  );
+
+  showProducts(filtered);
+  // reuse your grid display function
+});
+
+searchButton.addEventListener('click', () => {
+  modal.style.display = 'none';
+  console.log("click")
+})
+document.querySelector('.js-show-cart').addEventListener('click', function () {
+  open('/cart/cart.html', '_self')
+})

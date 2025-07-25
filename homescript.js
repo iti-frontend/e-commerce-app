@@ -32,6 +32,15 @@ function showSlides(n) {
 
 setInterval(() => {
   plusSlides(1);
-}, 3000); 
+}, 3000);
 
- 
+document.querySelector('.b1').addEventListener('click', function () {
+  open('shop.html', '_self')
+})
+var boxes = document.querySelectorAll('.boxbutton')
+for (let i = 0; i < boxes.length; i++) {
+  boxes[i].addEventListener('click', function () {
+    open('shop.html', '_self')
+
+  })
+}

@@ -1,34 +1,34 @@
 
-  const toggleBtn = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.menu-desktop');
+const toggleBtn = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu-desktop');
 
-  toggleBtn.addEventListener('click', () => {
-    menu.classList.toggle('active');
+toggleBtn.addEventListener('click', () => {
+  menu.classList.toggle('active');
 
+});
+
+
+window.addEventListener('scroll', function () {
+  const nav = document.querySelector('.wrap-menu-desktop');
+  if (window.scrollY > 0) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+
+// Select all top-level <li> items in the main menu
+const menuItems = document.querySelectorAll('.main-menu > li');
+
+menuItems.forEach(item => {
+  item.addEventListener('click', function () {
+    // Remove active-menu from all
+    menuItems.forEach(i => i.classList.remove('active-menu'));
+    // Add to the clicked one
+    this.classList.add('active-menu');
   });
-
-
-  window.addEventListener('scroll', function () {
-    const nav = document.querySelector('.wrap-menu-desktop');
-    if (window.scrollY > 0) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  });
-
-  
-  // Select all top-level <li> items in the main menu
-  const menuItems = document.querySelectorAll('.main-menu > li');
-
-  menuItems.forEach(item => {
-    item.addEventListener('click', function () {
-      // Remove active-menu from all
-      menuItems.forEach(i => i.classList.remove('active-menu'));
-      // Add to the clicked one
-      this.classList.add('active-menu');
-    });
-  });
+});
 
 // Get elements
 const modal = document.getElementById('searchModal');
@@ -52,28 +52,9 @@ window.addEventListener('click', (e) => {
   }
 });
 
- const searchInput = document.getElementById('searchInput');
-  const searchButton = document.getElementById('searchButton');
-  const listItems = document.querySelectorAll('#searchResults li'); // or your actual elements
-
-  searchButton.addEventListener('click', () => {
-    const query = searchInput.value.toLowerCase();
-
-    listItems.forEach(item => {
-      const text = item.textContent.toLowerCase();
-      item.style.display = text.includes(query) ? '' : 'none';
-    });
-    searchModal.style.display = 'none';
-  });
-  searchInput.addEventListener('input', () => {
-  const query = searchInput.value.toLowerCase();
-
-  listItems.forEach(item => {
-    const text = item.textContent.toLowerCase();
-    item.style.display = text.includes(query) ? '' : 'none';
-  });
-});
-
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+const listItems = document.querySelectorAll('#searchResults li'); // or your actual elements
 
 // Apply saved mode on load
 if (localStorage.getItem("mode") === "dark") {
@@ -87,6 +68,10 @@ document.getElementById("toggleMode").addEventListener("click", function () {
 });
 
 
+var cart = document.querySelector('.js-show-cart')
 
+cart.addEventListener('click',function(){
+  open('/cart/cart.html')
+})
 
 
