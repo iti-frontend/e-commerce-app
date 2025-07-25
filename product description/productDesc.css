@@ -1,4 +1,153 @@
-img{
-    width: 300px;
-    height: 300px;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-color: #fff;
+    --text-color: #333;
+    --hover-color: #6C7AE0;
+    --nav-bg-color: transparent;
+}
+
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+.box {
+    margin: 0 auto;
+    margin-top: 120px;
+    width: 80%;
+    max-height: 900px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.photos {
+    width: 50%;
+    display: flex;
+}
+
+.coverAlbum {
+    margin: 0 20px;
+    width: 70%;
+    height: 400px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* position: relative; */
+}
+
+
+.album {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.album>img {
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+    margin-right: 5px;
+
+}
+
+.album>img:hover {
+    border: 1px solid;
+    cursor: pointer;
+}
+
+
+
+.information {
+    width: 50%;
+}
+
+.information>h1 {
+    font-weight: 400;
+    padding: 10px 0;
+    color: var(--text-color);
+}
+
+.information>h3 {
+    font-weight: 400;
+    color: var(--text-color);
+    padding: 5px 0;
+}
+
+.information>p {
+    font-weight: 200;
+    padding: 10px 0;
+}
+
+.information>span {
+    font-weight: 200;
+}
+
+.information select {
+    all: unset;
+    border: 1px solid;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 200;
+    padding: 2px 0;
+    margin: 10px;
+}
+
+.information .quantity {
+    margin: 0 auto;
+    width: 50%;
+}
+
+
+.information>.quantity>button {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+.information>.quantity>button>i {
+    font-size: 1.3em;
+    color: var(--text-color);
+}
+
+.information>.quantity>.total {
+    font-weight: 200;
+    font-size: 1.3em;
+}
+
+.information button:hover {
+    background-color: var(--hover-color);
+    color: var(--bg-color);
+}
+
+.information button i:hover {
+    background-color: var(--hover-color);
+    color: var(--bg-color);
+}
+
+.information>button {
+    margin: 0 115px;
+    border-radius: 25px;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+    background-color: var(--hover-color);
+    color: var(--bg-color);
+    font-size: 1.2em;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+
+}
+
+.information>button:hover {
+    background-color: var(--text-color);
 }

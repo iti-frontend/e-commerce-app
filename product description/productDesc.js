@@ -2,10 +2,12 @@ var title = document.querySelector('.title')
 var price = document.querySelector('.price')
 var total = document.querySelector('.total')
 var description = document.querySelector('.description')
-var album = document.querySelector('.album')
+var album = document.querySelector('.album');
+var coverAlbum = document.querySelector('.coverAlbum')
 var increaseBtn = document.querySelector('.increase')
 var decreaseBtn = document.querySelector('.decrease')
 var addToCart = document.querySelector('.addToCart')
+var images = document.images
 // here to get the product id from req params
 var params = new URLSearchParams(window.location.search)
 var productId = params.get('id');
@@ -17,7 +19,7 @@ var counter = 1;
 var cardList;
 // making the request
 var req = new XMLHttpRequest()
-req.open("GET", '../products.json')
+req.open("GET", '../products.json','true')
 req.send()
 req.onreadystatechange = function () {
     if (req.status == 200 && req.readyState == 4) {
@@ -34,13 +36,21 @@ req.onreadystatechange = function () {
 setTimeout(function () {
     // setting the values for the page elements
     title.innerHTML = myProduct.name
-    price.innerHTML = myProduct.price
+    price.innerHTML = `$${myProduct.price}`
     description.innerHTML = myProduct.description
     total.innerHTML = counter
     // loop so we can access all images
     for (var i = 0; i < myProduct.images.length; i++) {
         album.innerHTML += `<img src=${myProduct.images[i]}>`
     }
+    // making the slider
+    coverAlbum.style.backgroundImage = "url(" + myProduct.images[1] + ")"
+    for (let i = 0; i < images.length; i++) {
+        images[i].addEventListener('click', function () {
+            coverAlbum.style.backgroundImage = "url(" + event.target.src + ")"
+        })
+    }
+
     // the event to increase the count and update the total value
     increaseBtn.addEventListener('click', function () {
         counter++
@@ -100,5 +110,5 @@ setTimeout(function () {
         console.log('new product pushed');
     })
 
-}, 500)
+}, 50)
 
