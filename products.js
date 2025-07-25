@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', function () { //to make sure script 
 // expand and collapse filters ---- START -----
 function toggleFilters() {
   const filterSection = document.getElementById('filterSection');
-  if (filterSection.style.display === 'none') { filterSection.style.display = 'flex'; }
+  if (filterSection.style.display ===""||filterSection.style.display === 'none') { filterSection.style.display = 'flex'; }
   else filterSection.style.display = 'none';
 }
 // ---- END -----
