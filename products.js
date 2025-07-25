@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', function () { //to make sure script 
 // expand and collapse filters ---- START -----
 function toggleFilters() {
   const filterSection = document.getElementById('filterSection');
-  if (filterSection.style.display === 'none') { filterSection.style.display = 'flex'; }
+  if (filterSection.style.display ===""||filterSection.style.display === 'none') { filterSection.style.display = 'flex'; }
   else filterSection.style.display = 'none';
 }
 // ---- END -----
@@ -148,38 +148,38 @@ function closeFilter() {
 // ---- END -----
 
 // Get elements
-const modal = document.getElementById('searchModal');
-const openBtn = document.querySelectorAll('.js-show-modal-search');
-const closeBtn = document.getElementById('closeModal');
+const modal_ = document.getElementById('searchModal');
+const openButton = document.querySelectorAll('.js-show-modal-search');
+const closeButton = document.getElementById('closeModal');
 
 
-for (let i = 0; i < openBtn.length; i++) {
-  openBtn[i].addEventListener('click', () => {
-    modal.style.display = 'block';
+for (let i = 0; i < openButton.length; i++) {
+  openButton[i].addEventListener('click', () => {
+    modal_.style.display = 'block';
     console.log("Modal opened");
   });
 }
 
 // Close modal
-closeBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
+closeButton.addEventListener('click', () => {
+  modal_.style.display = 'none';
 });
 
 // Close when clicking outside modal content
 window.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
+  if (e.target === modal_) {
+    modal_.style.display = 'none';
   }
 });
 
-const searchInput = document.getElementById('searchInput');
-const searchButton = document.getElementById('searchButton');
+const searchInput_ = document.getElementById('searchInput');
+const searchBtn = document.getElementById('searchButton');
 // const listItems = document.querySelectorAll('h3'); // or your actual elements
 
 
 
-searchInput.addEventListener('input', () => {
-  const query = searchInput.value.trim().toLowerCase();
+searchInput_.addEventListener('input', () => {
+  const query = searchInput_.value.trim().toLowerCase();
 
   const storedProducts = JSON.parse(localStorage.getItem("products"));
 
@@ -191,10 +191,16 @@ searchInput.addEventListener('input', () => {
   // reuse your grid display function
 });
 
-searchButton.addEventListener('click', () => {
-  modal.style.display = 'none';
+searchBtn.addEventListener('click', () => {
+  modal_.style.display = 'none';
   console.log("click")
 })
 document.querySelector('.js-show-cart').addEventListener('click', function () {
   open('/cart/cart.html', '_self')
 })
+
+function setActiveLink(clickedLink) {
+  const links = document.querySelectorAll('.filter-links a');
+  links.forEach(link => link.classList.remove('active'));
+  clickedLink.classList.add('active');
+}
