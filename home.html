@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home</title>
+
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <section class="section1-slider">
+
+    <div class="slide " style="background-image: url('./images/slide-01.jpg'); " data-active>
+      <div class="HeadlinesInSlider">
+        <span class="sliderspan">Women Collection 2018</span>
+        <h1 id="h1slide1">NEW SEASON</h1>
+
+        <button class="b1">Shop Now</button>
+
+      </div>
+    </div>
+    <div class="slide " style="background-image: url('./images/slide-021.jpg');">
+      <div class="HeadlinesInSlider">
+        <span class="sliderspan">Men New Season</span>
+        <h1 id="h1slide2">JACKETS & COATS</h1>
+
+        <button class="b1">Shop Now</button>
+
+      </div>
+    </div>
+    <div class="slide " style="background-image: url('./images/slide-03.jpg');">
+      <div class="HeadlinesInSlider">
+        <span class="sliderspan">Men Collection 2018</span>
+        <h1>NEW ARRIVALS</h1>
+
+        <button class="b1">Shop Now</button>
+
+      </div>
+
+
+    </div>
+
+
+    </div>
+
+
+  </section>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+  <section class="filterOutline">
+
+    <a class="box" style="background-image:url('./images/banner-01.webp') ;">
+      <div class="TextInBox">
+        <span class="heading">Women</span><br>
+        <span class="subtitle">Spring 2018</span>
+
+      </div>
+      <span class="boxbutton">SHOP NOW</span>
+    </a>
+    <a class="box" style="background-image:url('./images/banner-02.webp') ;">
+      <div class="TextInBox">
+        <span class="heading">Men</span><br>
+        <span class="subtitle">Spring 2018</span>
+      </div>
+      <span class="boxbutton">SHOP NOW</span>
+    </a>
+    <a class="box" style="background-image:url('./images/banner-03.webp') ;">
+      <div class="TextInBox">
+        <span class="heading">Accesories</span><br>
+        <span class="subtitle">New Trend</span>
+      </div>
+      <span class="boxbutton">SHOP NOW</span>
+    </a>
+
+
+  </section>
+
+  <div id="footer"></div>
+  <script>
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+
+
+
+  <script src="homescript.js"></script>
+
+</body>
+
+</html>
