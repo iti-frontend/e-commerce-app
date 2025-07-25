@@ -144,6 +144,12 @@
       opacity: 1;
       transform: translate(-50%, 0);
     }
+
+    #noFound{ 
+      display: none;
+      text-align: center;
+
+    }
   </style>
 </head>
 <body>
@@ -151,11 +157,11 @@
   <section> <!-- filter bar (category only)-->
     <div class="filter-navbar">
     <div class="filter-links">
-      <a href="#" class="active" onclick="filter('all')">All Products</a>
-      <a href="#" onclick="filter('female','all')">Women</a>
-      <a href="#" onclick="filter('male','all')">Men</a>
-      <a href="#" onclick="filter('accessories','all')">Accessories</a>
-      <a href="#" onclick="filter('Shoes','all')">Shoes</a>
+      <a href="#" class="active" onclick="filter('all','all');closeFilter();">All Products</a>
+      <a href="#" onclick="filter('female','all');closeFilter();">Women</a>
+      <a href="#" onclick="filter('male','all');closeFilter();">Men</a>
+      <a href="#" onclick="filter('accessories','all');closeFilter();">Accessories</a>
+      <a href="#" onclick="filter('Shoes','all');closeFilter();">Shoes</a>
     </div>
 
     <div class="controls">
@@ -195,7 +201,9 @@
       <div id="product-grid" class="product-grid"></div>
       </div>
     </div>
+    <div id="noFound"> <h2> No Products Found </h2> </div>
   </section>
+
 
     <script src="products.js"></script>
 

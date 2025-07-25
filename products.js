@@ -1,18 +1,10 @@
+let selectedCategory = "all";
+let selectedPrice = "all";
+
+// get products from json and store it in local storage ---- START -----
 window.addEventListener('DOMContentLoaded', function () { //to make sure script loads after html
-
-  // fetch('products.json')
-  //       .then(response => {
-  //         if (!response.ok) {
-  //           throw new Error('file is not found');
-  //         }
-  //         var products = response.json();
-  //         return products; 
-  //       })
-  // .then(productsObject => {
-
   var req = new XMLHttpRequest();
   req.open("GET", '../products.json');
-
   req.send();
   req.onreadystatechange = function () {
     if (req.status === 200 && req.readyState === 4) {
@@ -35,21 +27,20 @@ window.addEventListener('DOMContentLoaded', function () { //to make sure script 
       });
     }
   };
-
-  // .catch(error => {
-  //   console.error('There was a problem with fetching products:', error);
-  // });
 });
+// ---- END -----
 
 
+// expand and collapse filters ---- START -----
 function toggleFilters() {
-  const panel = document.getElementById('filterSection');
-  panel.style.display = panel.style.display === 'flex' ? 'none' : 'flex';
+  const filterSection = document.getElementById('filterSection');
+  if (filterSection.style.display === 'none') { filterSection.style.display = 'flex'; }
+  else filterSection.style.display = 'none';
 }
+// ---- END -----
 
-let selectedCategory = "all";
-let selectedPrice = "all";
 
+// set category & price ,and calls filter function ---- START -----
 function setCategory(category) {
   selectedCategory = category;
   filter(selectedCategory, selectedPrice);
@@ -59,15 +50,22 @@ function setPrice(price) {
   selectedPrice = price;
   filter(selectedCategory, selectedPrice);
 }
+// ---- END -----
 
+// filters products by category and/or price   ---- START ----
 function filter(category, price) {
-  const storedProducts = JSON.parse(localStorage.getItem("products"));
+  
+  const storedProducts = JSON.parse(localStorage.getItem("products"));  
   const filteredProducts = [];
 
   for (let i = 0; i < storedProducts.length; i++) {
     const product = storedProducts[i];
 
-    const matchedCategory = category === "all" || product.category.toLowerCase() === category.toLowerCase();
+    var matchedCategory=true;
+    if(category === "all" || product.category.toLowerCase() === category.toLowerCase()){
+      matchedCategory = true;
+    }
+    else matchedCategory=false;
     let matchedPrice = true;
 
     if (price === "100-1000") {
@@ -96,20 +94,34 @@ function filter(category, price) {
 
   showProducts(filteredProducts);
 }
+// ---- END -----
+
+
+// show produts in grid  ---- START -----
 
 function showProducts(filteredProducts) {
   const grid = document.getElementById("product-grid");
   grid.innerHTML = '';
-  filteredProducts.forEach(product => {
-    const div = document.createElement('div');
-    div.className = 'product-card';
+var noFound = document.getElementById("noFound");
+  if (filteredProducts.length === 0) {
+    noFound.style.display = "block";
+  }
+  else {
+    noFound.style.display = "none";
+    filteredProducts.forEach(product => {
+      const div = document.createElement('div');
+      div.className = 'product-card';
 
-    cardStyle(product, div);
+      cardStyle(product, div);
 
-    grid.appendChild(div);
-  });
+      grid.appendChild(div);
+
+    });
+  }
 }
+// ---- END -----
 
+// fill card details and style   ---- START -----
 function cardStyle(product, card) {
   card.innerHTML = ` 
             <div class="product-image-div">
@@ -119,4 +131,12 @@ function cardStyle(product, card) {
             <h3>${product.name}</h3>
             <p class="price">$${product.price}</p>
           `;
-} //adds html items to card
+} 
+// ---- END -----
+
+// Close filter section --- START ---
+function closeFilter(){
+  const filterSection = document.getElementById('filterSection');
+  filterSection.style.display = 'none';
+}
+// ---- END -----
