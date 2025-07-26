@@ -335,10 +335,10 @@ h5 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 40px;
+  gap: 2rem;
   max-width: 1200px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 2rem 1rem;
   /* background-color: #717fe0; */
 
 
@@ -373,18 +373,30 @@ a:hover {
   font-size: 15px;
   flex-wrap: wrap;
   position: relative;
-  flex: 1 1 250px;
-  /* background-color: yellow; */
+  flex: 1 ;
+  /* background-color: yellow;  */
   display: flex;
   flex-direction: column;
+  min-width: 250px;
+  gap:5px;
+  box-sizing: border-box;
+  
 }
 
 @media (max-width:800px) {
   .footer {
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
+  
+    
 
   }
+.Categories,
+.Help,
+.intouch,
+.NEWSLETTER{
+  margin: 2%;
+}
 }
 
 li {
@@ -405,14 +417,12 @@ li {
   margin-top: 10px;
 }
 
-.intouch,
-.NEWSLETTER {
-  max-width: 300px;
-}
+
 
 p {
   color: #888;
   max-width: 80%;
+  
 }
 
 .footer-bottom {
@@ -423,12 +433,18 @@ p {
 
 }
 
+.b2,
+.inputemail {
+  width: 100%;
+}
+
+
 .b2 {
   margin-top: 5%;
   background-color: #717fe0;
   border: 0px;
   color: #fff;
-  width: 170px;
+  width: 12rem;
   height: 45px;
   border-radius: 23px;
   font-size: 16px;
@@ -436,7 +452,7 @@ p {
   justify-content: center;
   align-items: center;
   display: flex;
-
+  
   font-weight: 400;
 
 }
@@ -459,6 +475,15 @@ p {
 
 .inputemail:hover {
   border-bottom: 2px solid #717fe0;
+}
+.ending{
+  color: #888;
+  max-width: 80%;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-left: 10%;
 }
 
 /* .inputemail:active{
