@@ -62,9 +62,7 @@ body.dark-mode .logo .logo-dark {
   right: 0;
   background-color: transparent;
   color: var(--text-color);
-  z-index: 19;
-
- 
+  z-index: 1290;
 
 }
 

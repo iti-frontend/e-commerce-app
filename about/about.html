@@ -1,126 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="../main.css">
+
 
     <title>About</title>
 </head>
+
 <body>
-     <!-- Nav Wrapper -->
-<div class="wrap-menu-desktop scrolled">
-    <nav class="limiter-menu-desktop container">
-                <!-- Logo -->
-                <a href="#" class="logo">
+    <!-- Nav Wrapper -->
+    <div class="wrap-menu-desktop scrolled">
+        <nav class="limiter-menu-desktop container">
+            <!-- Logo -->
+            <a href="/home.html" class="logo">
                 <img class="logo-dark" src="../images/light-logo.png" alt="IMG-LOGO">
                 <img class="logo-light" src="../images/logo.png" alt="IMG-LOGO">
-                </a>
-                <!-- Icons -->
-                <div class="wrap-icon-header">
+            </a>
+            <!-- Icons -->
+            <div class="wrap-icon-header">
                 <div class="icon-header-item js-show-modal-search">
-                <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </div>
                 <div class="icon-header-item icon-header-noti js-show-cart" data-notify="2">
-                <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
                 </div>
                 <a href="#" class="icon-header-item icon-header-noti" data-notify="0">
-                <i class="fa-regular fa-heart"></i>
+                    <i class="fa-regular fa-heart"></i>
                 </a>
-                </div>
-                <!-- Toggle Button -->
-                <button class="menu-toggle" aria-label="Toggle Menu">
-                <span class="icon">&#9776;</span> 
+            </div>
+            <!-- Toggle Button -->
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <span class="icon">&#9776;</span>
             </button>
-                <!-- Menu -->
-                <div class="menu-desktop">
+            <!-- Menu -->
+            <div class="menu-desktop">
                 <ul class="main-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Blog</a></li>
-                <li class="active-menu"><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                    <li><a href="/home.html">Home</a></li>
+                    <li><a href="/shop.html">Shop</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li class="active-menu"><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
-                </div>
-    </nav>
-</div>
+            </div>
+        </nav>
+    </div>
     <!-- Modal -->
-<div class="modal-search" id="searchModal">
-  <div class="modal-content">
-    <span class="close-modal" id="closeModal">&times;</span>
-    <input type="text" placeholder="Search..." class="search-input" id="searchInput" />
-    <button class="search-button" id="searchButton">Search</button>
-  </div>
-</div>
+    <div class="modal-search" id="searchModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <input type="text" placeholder="Search..." class="search-input" id="searchInput" />
+            <button class="search-button" id="searchButton">Search</button>
+        </div>
+    </div>
     <!-- Toggle Mode -->
-<button id="toggleMode"><i class="fa-solid fa-circle-half-stroke"></i></button>
+    <button id="toggleMode"><i class="fa-solid fa-circle-half-stroke"></i></button>
 
-<!--about background img-->
-<div class="aboutimg">
-    <h2>About</h2>
-</div>
-
-<div class="our-story">
-    <div class="our-story-content">
-        <div class="our-story-text">
-            <h3>Our Story</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non auctor massa ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius egestas diam, eu sodales metus scelerisque congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas gravida justo eu arcu egestas convallis. Nullam eu erat bibendum, tempus ipsum eget, dictum enim. Donec non neque ut enim dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec condimentum euismod tortor, eget facilisis diam faucibus et. Morbi a tempor elit.
-                <br>
-                Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci ut gravida. Aliquam erat volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus sagittis. Etiam pellentesque, magna vel dictum rutrum, neque justo eleifend elit, vel tincidunt erat arcu ut sem. Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et maximus enim ligula ac ligula.
-                <br>
-                Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-            </p>
-        </div>
-        <div class="our-story-img">
-            <div class="img-border">
-                <div class="img-our-story">
-                    <img src="/about/images/about-1.jpg" alt="our-story">
-                </div>
-                
-            </div>
-            
-        </div>
+    <!--about background img-->
+    <div class="aboutimg">
+        <h2>About</h2>
     </div>
 
-</div>
-
-<div class="our-story second">
-    <div class="our-story-content">
-        <div class="our-story-img">
-            <div class="img-border">
-                <div class="img-our-story">
-                    <img src="/about/images/about-2.jpg" alt="our-story">
-                </div>
-                
+    <div class="our-story">
+        <div class="our-story-content">
+            <div class="our-story-text">
+                <h3>Our Story</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non auctor
+                    massa ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt augue. Orci
+                    varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius
+                    egestas diam, eu sodales metus scelerisque congue. Pellentesque habitant morbi tristique senectus et
+                    netus et malesuada fames ac turpis egestas. Maecenas gravida justo eu arcu egestas convallis. Nullam
+                    eu erat bibendum, tempus ipsum eget, dictum enim. Donec non neque ut enim dapibus tincidunt vitae
+                    nec augue. Suspendisse potenti. Proin ut est diam. Donec condimentum euismod tortor, eget facilisis
+                    diam faucibus et. Morbi a tempor elit.
+                    <br>
+                    Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam
+                    aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci ut
+                    gravida. Aliquam erat volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus sagittis.
+                    Etiam pellentesque, magna vel dictum rutrum, neque justo eleifend elit, vel tincidunt erat arcu ut
+                    sem. Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et maximus enim ligula ac
+                    ligula.
+                    <br>
+                    Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on
+                    (+1) 96 716 6879
+                </p>
             </div>
-            
-        </div>
-        <div class="our-story-text">
-            <h3>Our Our Mission</h3>
-            <p>
-              Mauris non lacinia magna. Sed nec lobortis dolor. Vestibulum rhoncus dignissim risus, sed consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam maximus mauris sit amet odio convallis, in pharetra magna gravida. Praesent sed nunc fermentum mi molestie tempor. Morbi vitae viverra odio. Pellentesque ac velit egestas, luctus arcu non, laoreet mauris. Sed in ipsum tempor, consequat odio in, porttitor ante. Ut mauris ligula, volutpat in sodales in, porta non odio. Pellentesque tempor urna vitae mi vestibulum, nec venenatis nulla lobortis. Proin at gravida ante. Mauris auctor purus at lacus maximus euismod. Pellentesque vulputate massa ut nisl hendrerit, eget elementum libero iaculis.
+            <div class="our-story-img">
+                <div class="img-border">
+                    <div class="img-our-story">
+                        <img src="/about/images/about-1.jpg" alt="our-story">
+                    </div>
 
-                Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while.
+                </div>
 
-            - Steve Jobs
-            </p>
+            </div>
         </div>
-        
+
     </div>
 
-</div>
+    <div class="our-story second">
+        <div class="our-story-content">
+            <div class="our-story-img">
+                <div class="img-border">
+                    <div class="img-our-story">
+                        <img src="/about/images/about-2.jpg" alt="our-story">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="our-story-text">
+                <h3>Our Our Mission</h3>
+                <p>
+                    Mauris non lacinia magna. Sed nec lobortis dolor. Vestibulum rhoncus dignissim risus, sed
+                    consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
+                    turpis egestas. Nullam maximus mauris sit amet odio convallis, in pharetra magna gravida. Praesent
+                    sed nunc fermentum mi molestie tempor. Morbi vitae viverra odio. Pellentesque ac velit egestas,
+                    luctus arcu non, laoreet mauris. Sed in ipsum tempor, consequat odio in, porttitor ante. Ut mauris
+                    ligula, volutpat in sodales in, porta non odio. Pellentesque tempor urna vitae mi vestibulum, nec
+                    venenatis nulla lobortis. Proin at gravida ante. Mauris auctor purus at lacus maximus euismod.
+                    Pellentesque vulputate massa ut nisl hendrerit, eget elementum libero iaculis.
+
+                    Creativity is just connecting things. When you ask creative people how they did something, they feel
+                    a little guilty because they didn't really do it, they just saw something. It seemed obvious to them
+                    after a while.
+
+                    - Steve Jobs
+                </p>
+            </div>
+
+        </div>
+
+    </div>
 
 
 
+    <div id="footer"></div>
+    <script>
+        fetch('../footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
 
-
-<script src="../nav.js"></script>
+    <script src="../nav.js"></script>
 </body>
+
 </html>

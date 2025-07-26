@@ -10,7 +10,6 @@ toggleBtn.addEventListener('click', () => {
 
 window.addEventListener('scroll', function () {
   const nav = document.querySelector('.wrap-menu-desktop');
-  
   if (window.scrollY > 0) {
     nav.classList.add('scrolled');
   } else {
@@ -57,25 +56,6 @@ const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const listItems = document.querySelectorAll('#searchResults li'); // or your actual elements
 
-searchButton.addEventListener('click', () => {
-  const query = searchInput.value.toLowerCase();
-
-  listItems.forEach(item => {
-    const text = item.textContent.toLowerCase();
-    item.style.display = text.includes(query) ? '' : 'none';
-  });
-  searchModal.style.display = 'none';
-});
-searchInput.addEventListener('input', () => {
-  const query = searchInput.value.toLowerCase();
-
-  listItems.forEach(item => {
-    const text = item.textContent.toLowerCase();
-    item.style.display = text.includes(query) ? '' : 'none';
-  });
-});
-
-
 // Apply saved mode on load
 if (localStorage.getItem("mode") === "dark") {
   document.body.classList.add("dark-mode");
@@ -88,6 +68,10 @@ document.getElementById("toggleMode").addEventListener("click", function () {
 });
 
 
+var cart = document.querySelector('.js-show-cart')
 
+cart.addEventListener('click',function(){
+  open('/cart/cart.html')
+})
 
 
