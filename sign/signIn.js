@@ -9,19 +9,28 @@ function showError() {
     document.querySelector('.error').innerText = 'invalid email or password'
     document.querySelector('.error').style.color = 'red'
 }
+var usersList;
+if (localStorage.users != null) {
+    usersList = JSON.parse(localStorage.users)
+} else {
+    // if not we start with empty array
+    usersList = [];
+}
 
+var isSigned = false;
 document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault()
-    // checking if there is an email password saved to local storage
-    if (localStorage.email != null && localStorage.password != null) {
-        // getting data from local storage
-        var emaillocal = window.localStorage.getItem("email")
-        var passlocal = window.localStorage.getItem("password")
-        // comparing and validate the data with local storage
-        if (email.value == emaillocal && password.value == passlocal) {
-            open("../home.html", "_self")
-        } else {
-            showError()
+    // checking if app had users from  local storage
+    if (usersList.length >= 0) {
+        for (let i = 0; i < usersList.length; i++) {
+            // comparing and validate the data with local storage
+            if (email.value == usersList[i].email && password.value == usersList[i].password) {
+                open("../home.html", "_self")
+                isSigned = true;
+                sessionStorage.setItem('signed', isSigned)
+            } else {
+                showError()
+            }
         }
     } else {
         showError();

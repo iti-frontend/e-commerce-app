@@ -12,8 +12,9 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="shop.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="shop.css">
+  <link rel="stylesheet" href="conatct.css">
 
 </head>
 
@@ -35,6 +36,7 @@
         </div>
         <div class="icon-header-item icon-header-noti js-show-cart" data-notify="2">
           <i class="fa-solid fa-cart-shopping"></i>
+          <div class="cart___counter"></div>
         </div>
         <a href="#" class="icon-header-item icon-header-noti" data-notify="0">
           <i class="fa-regular fa-heart"></i>
@@ -54,7 +56,7 @@
           <li><a href="#down">Features</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="/about/about.html">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
   </div>
@@ -75,21 +77,21 @@
   <button id="toggleMode"><i class="fa-solid fa-circle-half-stroke"></i></button>
 
   <section> <!-- filter bar (category only)-->
-     <div class="container">
-    <div class="filter-navbar">
-      <div class="filter-links">
-        <a href="#" class="active" onclick="filter('all','all');closeFilter();setActiveLink(this);">All Products</a>
-        <a href="#" onclick="filter('female','all');closeFilter();setActiveLink(this);">Women</a>
-        <a href="#" onclick="filter('male','all');closeFilter();setActiveLink(this);">Men</a>
-        <a href="#" onclick="filter('accessories','all');closeFilter();setActiveLink(this);">Accessories</a>
-        <a href="#" onclick="filter('Shoes','all');closeFilter();setActiveLink(this);">Shoes</a>
-      </div>
+    <div class="container">
+      <div class="filter-navbar">
+        <div class="filter-links">
+          <a href="#" class="active" onclick="filter('all','all');closeFilter();setActiveLink(this);">All Products</a>
+          <a href="#" onclick="filter('female','all');closeFilter();setActiveLink(this);">Women</a>
+          <a href="#" onclick="filter('male','all');closeFilter();setActiveLink(this);">Men</a>
+          <a href="#" onclick="filter('accessories','all');closeFilter();setActiveLink(this);">Accessories</a>
+          <a href="#" onclick="filter('Shoes','all');closeFilter();setActiveLink(this);">Shoes</a>
+        </div>
 
-      <div class="controls">
-        <button onclick="toggleFilters()">☰ Filter</button>
-        <button class="js-show-modal-search">🔍 Search</button>
+        <div class="controls">
+          <button onclick="toggleFilters()">☰ Filter</button>
+          <button class="js-show-modal-search">🔍 Search</button>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
@@ -98,27 +100,28 @@
   <!--filter button categories-->
   <section>
     <div class="filter-section" id="filterSection">
-            <div class="container">
-      <div class="filter-groups-container">
+      <div class="container">
+        <div class="filter-groups-container">
 
-      <div class="filter-group">
-        <strong>Category</strong><br />
-        <p><input type="radio" name="category" value="men" onclick="setCategory('male')"> Men</p>
-        <p><input type="radio" name="category" value="women" onclick="setCategory('female')"> Women</p>
-        <p><input type="radio" name="category" value="accessories" onclick="setCategory('accessories')"> Accessories</p>
-        <p><input type="radio" name="category" value="shoes" onclick="setCategory('Shoes')"> Shoes</p>
-      </div>
+          <div class="filter-group">
+            <strong>Category</strong><br />
+            <p><input type="radio" name="category" value="men" onclick="setCategory('male')"> Men</p>
+            <p><input type="radio" name="category" value="women" onclick="setCategory('female')"> Women</p>
+            <p><input type="radio" name="category" value="accessories" onclick="setCategory('accessories')"> Accessories
+            </p>
+            <p><input type="radio" name="category" value="shoes" onclick="setCategory('Shoes')"> Shoes</p>
+          </div>
 
-      <div class="filter-group">
-        <strong>Price</strong><br />
-        <p><input type="radio" name="price" value="all" checked onclick="setPrice('all')"> All</p>
-        <p><input type="radio" name="price" value="0-100" onclick="setPrice('100-1000')"> $100 - $1000</p>
-        <p><input type="radio" name="price" value="100-200" onclick="setPrice('1000-2000')"> $1000 - $2000</p>
-        <p><input type="radio" name="price" value="200+" onclick="setPrice('2000+')"> $2000+</p>
+          <div class="filter-group">
+            <strong>Price</strong><br />
+            <p><input type="radio" name="price" value="all" checked onclick="setPrice('all')"> All</p>
+            <p><input type="radio" name="price" value="0-100" onclick="setPrice('100-1000')"> $100 - $1000</p>
+            <p><input type="radio" name="price" value="100-200" onclick="setPrice('1000-2000')"> $1000 - $2000</p>
+            <p><input type="radio" name="price" value="200+" onclick="setPrice('2000+')"> $2000+</p>
+          </div>
+        </div>
       </div>
     </div>
-            </div>
-            </div>
   </section>
 
   <!--all products-->
@@ -131,6 +134,10 @@
       <h2> No Products Found </h2>
     </div>
   </section>
+  <div class="to_top" id="toTopBtn">
+    <i class="fa-solid fa-angle-up"></i>
+  </div>
+
   <div id="footer"></div>
   <script>
     fetch('footer.html')

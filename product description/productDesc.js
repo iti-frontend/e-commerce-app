@@ -8,6 +8,9 @@ var increaseBtn = document.querySelector('.increase')
 var decreaseBtn = document.querySelector('.decrease')
 var addToCart = document.querySelector('.addToCart')
 var images = document.images
+var size = document.querySelector('.sizes')
+var prevBtn = document.querySelector('.prevv')
+var nextBtn = document.querySelector('.nextt')
 // here to get the product id from req params
 var params = new URLSearchParams(window.location.search)
 var productId = params.get('id');
@@ -19,7 +22,7 @@ var counter = 1;
 var cardList;
 // making the request
 var req = new XMLHttpRequest()
-req.open("GET", '../products.json','true')
+req.open("GET", '../products.json', 'true')
 req.send()
 req.onreadystatechange = function () {
     if (req.status == 200 && req.readyState == 4) {
@@ -27,6 +30,7 @@ req.onreadystatechange = function () {
         var res = final.products.find(p => p.id == productId)
         if (res != null) {
             myProduct = res
+
         } else {
             console.log('not found')
         }
@@ -43,6 +47,19 @@ setTimeout(function () {
     for (var i = 0; i < myProduct.images.length; i++) {
         album.innerHTML += `<img src=${myProduct.images[i]}>`
     }
+    nextBtn.addEventListener('click', function () {
+        i++
+        if (i >= myProduct.images.length) { i = 0 }
+
+        coverAlbum.style.backgroundImage = "url(" + myProduct.images[i] + ")"
+    })
+    prevBtn.addEventListener('click', function () {
+        i--
+        if (i < 0) {
+            i = myProduct.images.length - 1
+        }
+        coverAlbum.style.backgroundImage = "url(" + myProduct.images[i] + ")"
+    })
     // making the slider
     coverAlbum.style.backgroundImage = "url(" + myProduct.images[1] + ")"
     for (let i = 0; i < images.length; i++) {
@@ -71,7 +88,8 @@ setTimeout(function () {
         id: myProduct.id,
         images: myProduct.images[1],
         price: myProduct.price,
-        count: counter
+        count: counter,
+        sizes: size.value
     }
     // here we check if we had values at local storage we save it into array
     if (localStorage.shoppingcart != null) {
@@ -89,10 +107,11 @@ setTimeout(function () {
         if (cardList.length > 0 && cardList != []) {
             // loop and validate to makr sure we update the index and pushing new object to the array
             for (let i = 0; i < cardList.length; i++) {
-                if (cardList[i].id == product.id) {
+                if (cardList[i].id == product.id && cardList[i].sizes == size.value) {
                     cardList[i].count = parseInt(cardList[i].count) + currentCount;
                     localStorage.shoppingcart = JSON.stringify(cardList);
                     console.log('updated count');
+                    alert("Added Succesfully");
                     return;
                 }
             }
@@ -103,11 +122,14 @@ setTimeout(function () {
             id: myProduct.id,
             images: myProduct.images[1],
             price: myProduct.price,
-            count: currentCount
+            count: currentCount,
+            sizes: size.value
         };
         cardList.push(productToAdd);
+
         localStorage.shoppingcart = JSON.stringify(cardList);
-        console.log('new product pushed');
+        alert("Added Succesfully");
+        // console.log('new product pushed');
     })
 
 }, 500)

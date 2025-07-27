@@ -35,6 +35,7 @@
                 </div>
                 <div class="icon-header-item icon-header-noti js-show-cart" data-notify="2">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="cart___counter"></div>
                 </div>
                 <a href="#" class="icon-header-item icon-header-noti" data-notify="0">
                     <i class="fa-regular fa-heart"></i>
@@ -78,8 +79,8 @@
             <div class="album">
             </div>
             <div class="coverAlbum">
-                <!-- <button class="next">></button>
-                <button class="prev"><</button> -->
+                <a class=" prevv" onclick="prev()">&#10094;</a>
+                <a class=" nextt" onclick="next()">&#10095;</a>
 
             </div>
         </div>
@@ -90,10 +91,10 @@
             <span>Choose size : </span>
 
             <select name="sizes" class="sizes">
-                <option value="s">Size S</option>
-                <option value="m">Size M</option>
-                <option value="l">Size L</option>
-                <option value="xl">Size XL</option>
+                <option value="S">Size S</option>
+                <option value="M">Size M</option>
+                <option value="L">Size L</option>
+                <option value="XL">Size XL</option>
             </select>
             <div class="quantity">
                 <button class="decrease">
