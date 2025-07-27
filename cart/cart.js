@@ -31,7 +31,7 @@ function showProductAtCart() {
 <div><h3>${cartList[i].name.split(' ').slice(1, 3).join(" ")}</h3></div>
 <div><i class="fas fa-trash-alt pointer"></i> </div>  </div>
 <div class="cart-desc-line">
-<div class="cat_product_desc"> m</div>
+<div class="cat_product_desc">${cartList[i].sizes} </div>
 <div class="cart-count"><i class="fa-solid fa-square-minus pointer"></i><div><p class="countNumber font-20">${count}</p></div><i class="fa-solid fa-square-plus pointer"></i></div>
 </div>  </div>  </div>
 <div> <div class="cart-desc-line cart-content-footer">
@@ -41,7 +41,8 @@ function showProductAtCart() {
   }
   document.querySelector(".cart__items").innerHTML = productCard
   document.querySelector(".cart-all-counts").innerText = itemsNumber
-
+  document.querySelector(".cart___counter").innerText=cartList.length
+  
 
 
 

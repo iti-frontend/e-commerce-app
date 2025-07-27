@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contact__section {
+    margin-top: 80px ;
+}
+
+.contact__head {
+    background-image: url(../about/images/about-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 25vh;
+    margin-bottom: 50px;
+
+    color: #fff;
+}
+
+.contact__head__layout {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+}
+.contact_main_btn{
+        cursor: pointer;
+       }
+
+.contact__head__layout h2 {
+       font-weight: 500;
+    font-size: 26px;
+}
+
+.contact__container {
+    display: flex;
+    align-items: stretch;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contact__info,
+.contact__main {
+    justify-content: center;
+    padding: 30px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e6e6e6;
+    gap: 10px;
+}
+
+.contact__main {
+    text-align: center;
+}
+
+.contact_main_inputs {
+    flex-direction: column;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    gap: 10px;
+
+}
+
+.contact_main_inputs textarea,
+.contact_main_inputs input {
+
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    outline: none;
+}
+
+.contact_main_inputs input:focus,
+.contact_main_inputs textarea:focus {
+    border: 1px solid #6366f1;
+}
+
+.contact__main__btn {
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 5px;
+    border: none;
+    background-color: #6366f1;
+    font-size: 18px;
+
+}
+
+.contact__main__btn:hover {
+    background-color: #6062ebc6;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 64, 128, 0.6);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+
+.contact_info_item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+
+.side__color__contact {
+    display: block;
+    color: #6366f1;
+    padding-top: 5px;
+}
+
+.contact_item_icon {
+    margin-right: 10px;
+}
+
+       .google-map {
+        margin-top: 50px;
+           position: relative;
+           padding-bottom: 40%; /* 16:9 aspect ratio */
+           height: 5vh;
+           overflow: hidden;
+       }
+       .google-map iframe {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+       }
+       @media only screen and (max-width: 768px){
+.contact__container{
+    width: 95%;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+
+}
+.contact__info,
+.contact__main{
+    width: 90%;
+}
+
+       }
+

@@ -67,11 +67,44 @@ document.getElementById("toggleMode").addEventListener("click", function () {
   localStorage.setItem("mode", document.body.classList.contains("dark-mode") ? "dark" : "light");
 });
 
+// var itemNumber_InCart=JSON.parse(localStorage.shoppingcart)
+//  document.querySelector(".cart___counter").innerHTML=itemNumber_InCart.length
+//  console.log(itemNumber_InCart)
+
 
 var cart = document.querySelector('.js-show-cart')
+var isSigned = false
+cart.addEventListener('click', function () {
+  isSigned = sessionStorage.getItem('signed')
+  console.log(isSigned)
+  if (isSigned) {
+    open('/cart/cart.html')
 
-cart.addEventListener('click',function(){
-  open('/cart/cart.html')
+  } else {
+    alert('sign in to continue')
+    open('/sign/signIn.html')
+  }
 })
 
+if(localStorage.shoppingcart !=undefined ){
+var itemNumber_InCart=JSON.parse(localStorage.shoppingcart)
+ document.querySelector(".cart___counter").innerHTML=itemNumber_InCart.length
+}else{
+ document.querySelector(".cart___counter").innerHTML=0
+}
 
+var toTopBtn = document.getElementById("toTopBtn");
+
+    // Show/hide the button based on scroll position
+    window.onscroll = function () {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            toTopBtn.style.display = "block";
+        } else {
+            toTopBtn.style.display = "none";
+        }
+    };
+
+    // Scroll to top when clicked
+    toTopBtn.onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };

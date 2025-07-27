@@ -204,3 +204,4 @@ function setActiveLink(clickedLink) {
   links.forEach(link => link.classList.remove('active'));
   clickedLink.classList.add('active');
 }
+
